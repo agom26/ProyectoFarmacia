@@ -15,12 +15,18 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
             $table->string('codigo');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->decimal('precio',8,2);
             $table->integer('existencia');
-            $table->decimal('precio', 5, 2)->nullable()->default(123.45);
-            $table->string('Descripcion');        
-
+            
+            /* fechas opcionales  */
+        /*             $table->date('fecha_fabricacion');
+        $table->date('fecha_vencimiento'); 
+        $table->date('created_at')->nullable()->default(new DateTime());
+        */
+           
             $table->timestamps();
         });
     }
