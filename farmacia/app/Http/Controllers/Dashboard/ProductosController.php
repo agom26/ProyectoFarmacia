@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductosPost;
 use App\Models\Productos;
@@ -60,9 +61,10 @@ class ProductosController extends Controller
      * @param  \App\Models\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Productos $productos)
+    public function edit(Productos $producto)
     {
-        //
+        echo view ('dashboard.productos.edit',['producto'=>$producto]); /* se cambia el modelo */
+
     }
 
     /**
@@ -72,9 +74,10 @@ class ProductosController extends Controller
      * @param  \App\Models\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Productos $productos)
+    public function update(StoreProductosPost $request, Productos $producto)
     {
-        //
+        $producto->update($request->validated());
+        return back()->with('status', 'Fue editado correctamente');
     }
 
     /**
@@ -85,6 +88,7 @@ class ProductosController extends Controller
      */
     public function destroy(Productos $productos)
     {
-        //
+        $productos->delete();
+        return back()->with('status','borrado exitosamente');
     }
 }
