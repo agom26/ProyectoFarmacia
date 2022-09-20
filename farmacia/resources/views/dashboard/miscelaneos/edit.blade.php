@@ -16,40 +16,18 @@
     <header>@include('dashboard.partials.nav-header-admin')</header>
    {{--  @include('dashboard.partials.nav-header-main') --}}
 
+   <br>
     <!-- dashboar/post/create.blade.php -->
-    <h1 class="center">Actualizar de Medicamento</h1><br>
+    <center><h1 >Actualizar Miscelaneo</h1></center>
     <br><br>
     <img src="images/1.png" alt="">
     {{-- @include('dashboard.partials.sesion-flash-status') --}}
-        <form action="{{route('productos.update',$producto->id)}}" method="post"> 
-
+        <form action="{{route('miscelaneos.update',$miscelaneo->id)}}" method="post"> 
+            
             @method('PUT')
-            @include('dashboard.partials._form')
+            @include('dashboard.partials._formmisc')
 
         </form>
-
-
-
-    <!--     <div class="col-md-12">
-                <div >
-                    <div >
-                        Listado de Titulo
-                    </div>
-
-                    <table class="table table-striped task-table">
-                        <thead>
-                            <th>Titulo</th>
-                            <th>URL Corta</th>
-                            <th>Contenido</th>
-                            <th>Descripcion</th>
-
-                        </thead>
-                        
-                    </table>
-                  
-                </div>
-    </div> -->
-    
 
 
 

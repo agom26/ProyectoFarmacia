@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Dashboard;
-
-
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreProductosPost;
-use App\Models\Productos;
+use App\Http\Requests\StoreMiscelaneosPost;
+use App\Models\Miscelaneos;
 use Illuminate\Http\Request;
 
-class ProductosController extends Controller
+class MiscelaneosController extends Controller
 {
     public function __construct()
     {
@@ -22,9 +20,8 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        $productos=Productos::orderBy('created_at','desc')->cursorpaginate(5);
-        echo view ('dashboard.productos.index',['productos'=> $productos]);
-
+        $miscelaneo=Miscelaneos::orderBy('created_at','desc')->cursorpaginate(5);
+        echo view ('dashboard.miscelaneos.index',['miscelaneos'=> $miscelaneo]);
     }
 
     /**
@@ -34,9 +31,8 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        echo view ('dashboard.productos.create');
+        echo view ('dashboard.miscelaneos.create',["miscelaneo"=> new Miscelaneos()]);
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -44,58 +40,56 @@ class ProductosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductosPost $request)
+    public function store(StoreMiscelaneosPost $request)
     {
-        Productos::create($request->validated());
-        return redirect('productos/create')->with('status', 'Muchas gracias, el producto ha sido creado con exito');
+        Miscelaneos::create($request->validated());
+        return redirect('miscelaneos/create')->with('status', 'Muchas gracias, el producto ha sido creado con exito');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Productos  $productos
+     * @param  \App\Models\Miscelaneos  $miscelaneos
      * @return \Illuminate\Http\Response
      */
-    public function show(Productos $producto)
+    public function show(Miscelaneos $miscelaneo)
     {
-        echo view('dashboard.productos.show', ["productos"=>$producto]);
+        echo view('dashboard.miscelaneos.show', ["miscelaneo"=>$miscelaneo]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Productos  $productos
+     * @param  \App\Models\Miscelaneos  $miscelaneos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Productos $producto)
+    public function edit(Miscelaneos $miscelaneo)
     {
-        echo view ('dashboard.productos.edit',['producto'=>$producto]); /* se cambia el modelo */
-
+        echo view ('dashboard.miscelaneos.edit',['miscelaneo'=>$miscelaneo]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Productos  $productos
+     * @param  \App\Models\Miscelaneos  $miscelaneos
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreProductosPost $request, Productos $producto)
+    public function update(StoreMiscelaneosPost $request, Miscelaneos $miscelaneo)
     {
-        $producto->update($request->validated());
+        $miscelaneo->update($request->validated());
         return back()->with('status', 'Fue editado correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Productos  $productos
+     * @param  \App\Models\Miscelaneos  $miscelaneos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Productos $producto)
+    public function destroy(Miscelaneos $miscelaneo)
     {
-        $producto->delete();
+        $miscelaneo->delete();
         return back()->with('status','borrado exitosamente');
-        
     }
 }
