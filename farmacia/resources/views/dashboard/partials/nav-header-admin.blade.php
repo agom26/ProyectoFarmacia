@@ -14,10 +14,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('proveedor.index')}}">Proveedores</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('productos.index')}}">Productos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Categorias</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('productos.index')}}">Medicamentos</a>
                   </li>
             </ul>
 

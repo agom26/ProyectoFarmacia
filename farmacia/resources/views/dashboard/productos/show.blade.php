@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>@include('dashboard.partials.nav-header-admin')</header>
-    <h1>Ingreso de Productos</h1><br><br>
+    <h1>Ingreso de Medicamento</h1><br><br>
 
     <!-- Si hay cualquier tipo de error se generara algo -->
   
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="card">
                 <div class="card-header">
-                  <h2>Ver Producto</h2>
+                  <h2>Ver Medicamento</h2>
                 </div>
                 <div class="card-body">
                     <form action="{{route('productos.store')}}" method="post">

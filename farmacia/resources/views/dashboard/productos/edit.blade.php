@@ -10,14 +10,14 @@
 
 
     
-    <title>ACTUALIZAR PRODUCTO</title>
+    <title>ACTUALIZAR MEDICAMENTO</title>
 </head>
 <body class="fondo">
     <header>@include('dashboard.partials.nav-header-admin')</header>
    {{--  @include('dashboard.partials.nav-header-main') --}}
 
     <!-- dashboar/post/create.blade.php -->
-    <h1 class="center">Actualizar de Post</h1><br>
+    <h1 class="center">Actualizar de Medicamento</h1><br>
     <br><br>
     <img src="images/1.png" alt="">
     {{-- @include('dashboard.partials.sesion-flash-status') --}}
