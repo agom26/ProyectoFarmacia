@@ -10,17 +10,19 @@
     <title>Productos</title>
 </head>
 <body>
+    <header>@include('dashboard.partials.nav-header-admin')</header>
     
-    <a href="{{ route('proveedor.create') }}" class="btn Btn-primary">Crear</a>
 
     <!-- Si hay cualquier tipo de error se generara algo -->
   
     <!-- Siempre colocar el endif -->
 
     <main>
+        <br><br>
         <div class="container">
             <div class="card">
                 <div class="card-header">
+                    <a href="{{ route('proveedor.create') }}" class="btn btn-primary">Crear</a>
                     <table class="table table-striped">
                 <Thead>
                     <body>

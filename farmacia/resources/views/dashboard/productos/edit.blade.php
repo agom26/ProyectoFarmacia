@@ -13,6 +13,7 @@
     <title>ACTUALIZAR PRODUCTO</title>
 </head>
 <body class="fondo">
+    <header>@include('dashboard.partials.nav-header-admin')</header>
    {{--  @include('dashboard.partials.nav-header-main') --}}
 
     <!-- dashboar/post/create.blade.php -->

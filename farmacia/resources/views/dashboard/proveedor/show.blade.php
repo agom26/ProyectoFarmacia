@@ -9,6 +9,9 @@
     <title>PROVEEDORES</title>
 </head>
 <body>
+
+    <header>@include('dashboard.partials.nav-header-admin')</header>
+    <br><br>
     <h1>Vista Proveedores</h1><br><br>
 
     <!-- Si hay cualquier tipo de error se generara algo -->

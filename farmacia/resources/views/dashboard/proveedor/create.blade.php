@@ -12,6 +12,8 @@
    
 
     <header>
+        @include('dashboard.partials.nav-header-admin')
+        <br><br>
         <h5>ADMIN</h5>
         <center><h1 class="mb-5">Ingreso de Proveedor</h1></center>
     </header>

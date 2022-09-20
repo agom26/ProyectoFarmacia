@@ -13,6 +13,9 @@
     <title>ACTUALIZAR PROVEEDOR</title>
 </head>
 <body class="fondo">
+
+    <header>@include('dashboard.partials.nav-header-admin')</header>
+    <br><br>
    {{--  @include('dashboard.partials.nav-header-main') --}}
 
     <!-- dashboar/post/create.blade.php -->

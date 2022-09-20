@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <form action="{{route('productos.store')}}" method="post""> 
         @include('dashboard.partials.sesion-flash-status')
 
