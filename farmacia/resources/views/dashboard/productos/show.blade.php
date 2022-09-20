@@ -69,7 +69,7 @@
                     </form>
                   <a href="{{route('productos.index')}}" class="btn btn-info">Regresar</a>
                 </div>
-              </div>
+            </div>
         </div>
     </main>
 </body>
