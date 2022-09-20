@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\ProductosController;
+use App\Http\Controllers\dashboard\ProveedoresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::get('/', function () {
 
 
 route::resource('productos', ProductosController::class);
+route::resource('proveedor', ProveedoresController::class);

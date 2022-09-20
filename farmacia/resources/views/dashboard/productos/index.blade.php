@@ -10,7 +10,9 @@
     <title>Productos</title>
 </head>
 <body>
+
     <a href="{{ route('productos.create') }}" class="btn Btn-primary">Crear</a>
+
 
     <!-- Si hay cualquier tipo de error se generara algo -->
   
@@ -94,7 +96,17 @@
                             </td>
 
                             <td>
-                                <a href="{{route('productos.show',$producto->id)}}" class="btn btn-primary">Ver</a>
+                                <a href="{{route('productos.show',$producto->id)}}" class="btn btn-info">Ver</a>
+                                <a href="{{route('productos.edit',$producto->id)}}" class="btn btn-info">Actualizar</a>
+
+                                <form method="POST" action="{{route('productos.destroy',$producto->id)}}">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger ms-5" type="submit">Borrar</button>
+
+
+                                </form >
+                                
                             </td>
                         </tr>
                     @endforeach
