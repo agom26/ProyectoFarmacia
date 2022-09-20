@@ -53,7 +53,10 @@
                     @enderror
                 </div>
 
-                <center><button type="" class="btn btn-outline-warning btn-lg"><h4>Guardar</h4></button></center>
+                <center><button type="" class="btn btn-outline-warning btn-lg"><h4>Guardar</h4></button><br>
+                    <a href="{{route('productos.index')}}" class="btn btn-info mt-3">Regresar</a>
+
+                </center>
 
             </article>
             <article class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
@@ -64,6 +67,6 @@
                 
             </div>
             
-        </form>
+    </form>
 </body>
 </html>

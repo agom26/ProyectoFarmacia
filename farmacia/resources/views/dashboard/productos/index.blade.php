@@ -20,7 +20,9 @@
 
     <main>
         <div class="container">
-            <table class="table table-striped">
+            <div class="card">
+                <div class="card-header">
+                    <table class="table table-striped">
                 <Thead>
                     <body>
                         <tr>
@@ -115,6 +117,8 @@
                 </Thead>
                 {{$productos->links()}}
             </table>
+                </div>
+            </div>
         </div>
     </main>
     <footer>

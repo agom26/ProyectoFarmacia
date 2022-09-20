@@ -41,7 +41,7 @@ class ProveedoresController extends Controller
     public function store(StoreProveedoresPost $request)
     {
         Proveedores::create($request->validated());
-        return redirect('proveedor/create')->with('status', 'Muchas gracias, el producto ha sido creado con exito');
+        return redirect('proveedor/create')->with('status', 'Muchas gracias, el Proveedor ha sido creado con exito');
     }
 
     /**
@@ -61,9 +61,10 @@ class ProveedoresController extends Controller
      * @param  \App\Models\Proveedores  $proveedores
      * @return \Illuminate\Http\Response
      */
-    public function edit(Proveedores $proveedores)
+    public function edit(Proveedores $proveedor)
     {
-        //
+        echo view ('dashboard.proveedor.edit',['proveedor'=>$proveedor]); /* se cambia el modelo */
+
     }
 
     /**
@@ -73,9 +74,10 @@ class ProveedoresController extends Controller
      * @param  \App\Models\Proveedores  $proveedores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Proveedores $proveedores)
+    public function update(StoreProveedoresPost $request, Proveedores $proveedor)
     {
-        //
+        $proveedor->update($request->validated());
+        return back()->with('status', 'Fue editado correctamente');
     }
 
     /**
@@ -84,8 +86,9 @@ class ProveedoresController extends Controller
      * @param  \App\Models\Proveedores  $proveedores
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Proveedores $proveedores)
+    public function destroy(Proveedores $proveedor)
     {
-        //
+        $proveedor->delete();
+        return back()->with('status','borrado exitosamente');
     }
 }

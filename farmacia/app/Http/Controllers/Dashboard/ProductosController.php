@@ -86,9 +86,9 @@ class ProductosController extends Controller
      * @param  \App\Models\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Productos $productos)
+    public function destroy(Productos $producto)
     {
-        $productos->delete();
+        $producto->delete();
         return back()->with('status','borrado exitosamente');
     }
 }

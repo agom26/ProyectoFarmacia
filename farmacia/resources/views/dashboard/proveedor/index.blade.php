@@ -19,7 +19,9 @@
 
     <main>
         <div class="container">
-            <table class="table table-striped">
+            <div class="card">
+                <div class="card-header">
+                    <table class="table table-striped">
                 <Thead>
                     <body>
                         <tr>
@@ -48,6 +50,15 @@
 
                             <td>
                                 <a href="{{route('proveedor.show',$proveedores->id)}}" class="btn btn-primary">Ver</a>
+                                <a href="{{route('proveedor.edit',$proveedores->id)}}" class="btn btn-info">Actualizar</a>
+
+                                <form method="POST" action="{{route('proveedor.destroy',$proveedores->id)}}">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger ms-5" type="submit">Borrar</button>
+
+
+                                </form >
                             </td>
                         </tr>
                     @endforeach
@@ -56,8 +67,11 @@
                 </Thead>
                 {{$proveedor->links()}}
             </table>
+                </div>
+            </div>
         </div>
     </main>
+
     <footer>
 
     </footer>
