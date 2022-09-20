@@ -98,16 +98,16 @@
                             </td>
 
                             <td>
-                                <a href="{{route('productos.show',$producto->id)}}" class="btn btn-info">Ver</a>
-                                <a href="{{route('productos.edit',$producto->id)}}" class="btn btn-info">Actualizar</a>
-
+                                <a href="{{route('productos.show',$producto->id)}}" class="btn btn-outline-info">Ver</a>
+                                <a href="{{route('productos.edit',$producto->id)}}" class="btn btn-outline-info">Actualizar</a>
+                                                        
                                 <form method="POST" action="{{route('productos.destroy',$producto->id)}}">
                                 @method('DELETE')
                                 @csrf
-                                <button class="btn btn-danger ms-5" type="submit">Borrar</button>
-
-
+                                <button class="btn btn-outline-danger ms-5" type="submit">Borrar</button>
                                 </form >
+
+
                                 
                             </td>
                         </tr>

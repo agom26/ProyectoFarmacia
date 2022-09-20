@@ -90,5 +90,6 @@ class ProductosController extends Controller
     {
         $producto->delete();
         return back()->with('status','borrado exitosamente');
+        
     }
 }
