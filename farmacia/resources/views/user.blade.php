@@ -23,7 +23,6 @@
 </head>
 <body>
     <div id="app">
-        @include('dashboard.partials.nav-header-user')
 
         <main class="py-4">
             <div class="container">

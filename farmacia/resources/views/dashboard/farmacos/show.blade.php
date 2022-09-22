@@ -9,7 +9,7 @@
     <title>SHOW</title>
 </head>
 <body>
-    <header>@include('dashboard.partials.nav-header-admin')</header>
+    <header>@include('dashboard.partials.nav-header-superadmin')</header>
     <h1>Ingreso de Medicamento</h1><br><br>
 
     <!-- Si hay cualquier tipo de error se generara algo -->

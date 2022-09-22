@@ -11,7 +11,7 @@ class FarmacosController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('soloadmin',['only'=>['index']]);
+        $this->middleware('solosuperadmin',['only'=>['index']]);
     }
     /**
      * Display a listing of the resource.

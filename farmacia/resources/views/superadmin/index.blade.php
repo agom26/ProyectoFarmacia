@@ -23,7 +23,7 @@
 </head>
 <body class="">
     <div id="app">
-        @include('dashboard.partials.nav-header-user')
+        @include('dashboard.partials.nav-header-superadmin')
         <center><img src="https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/c/AmazonStores/ATVPDKIKX0DER/ee4b774f3bb178d5895ad7bc1348c9bf.w3000.h600.jpg" alt="" width="100%" height="100%">
         
         <main class="ps-4">
@@ -111,6 +111,5 @@
             
         </main>
     </div>
-</body>
 </body>
 </html>

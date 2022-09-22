@@ -27,5 +27,12 @@ class TodosSeeder extends Seeder
             'password'=>Hash::make('pizza'),
             'tipo'=>'2',
         ]);
+
+        $superadmin=User::create([
+            'name'=>'superadmin',
+            'email'=>'superadmin@gmail.com',
+            'password'=>Hash::make('Farmacos'),
+            'tipo'=>'3',
+        ]);
     }
 }

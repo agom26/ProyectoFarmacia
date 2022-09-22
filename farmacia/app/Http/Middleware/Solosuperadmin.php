@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class SoloAdmin
+class Solosuperadmin
 {
     /**
      * Handle an incoming request.
@@ -19,13 +19,14 @@ class SoloAdmin
     {
         switch(Auth::user()->tipo){
             case('1'):
-                return $next($request);
+                return redirect('home');
             break;
             case('2'):
                 return redirect('users');
             break;
             case('3'):
-                return redirect('superadmin');
+                return $next($request);
+            break;
         }
     }
 }
