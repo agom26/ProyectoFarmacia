@@ -20,55 +20,55 @@
         <div class="container">
             <div class="card">
                 <div class="card-header">
-                  <h2>Ver Medicamento</h2>
+                  <h2>Ver Misceláneo</h2>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('productos.store')}}" method="post">
+                    <form action="{{route('miscelaneos.store')}}" method="post">
 
             
                         @csrf
             
                         <section class="margen">
                             <label for="" class="form-label">Codigo</label>
-                            <input type="text" name="codigo" class="form-control" value="{{$productos->codigo}} ">
+                            <input type="text" name="codigo" class="form-control" value="{{$miscelaneo->codigo}} ">
                             @error('codigo')
                                 <small class="text-light">{{ $message }}</small>
                             @enderror
                             <br>
                             
                             <label for=""class="form-label" >Nombre</label>
-                            <input type="text" name="nombre" class="form-control"value="{{$productos->nombre}}">
+                            <input type="text" name="nombre" class="form-control"value="{{$miscelaneo->nombre}}">
                             @error('nombre')
                                 <small class="text-light">{{ $message }}</small>
                             @enderror
                             <br>
 
-                            <label for=""class="form-label" >Descripcion</label>
-                            <input type="text" name="descripcion" class="form-control"value="{{$productos->descripcion}}">
-                            @error('descripcion')
-                                <small class="text-light">{{ $message }}</small>
-                            @enderror
-                            <br>
+                            
                             <label for=""class="form-label" >Precio</label>
-                            <input type="decimal" name="precio" class="form-control"value="{{$productos->precio}}">
+                            <input type="decimal" name="precio" class="form-control"value="{{$miscelaneo->precio}}">
                             @error('precio')
                                 <small class="text-light">{{ $message }}</small>
                             @enderror
                             <br>
 
                             <label for="" class="form-label">Existencia</label>
-                            <textarea name="content" class="form-control" >{{$productos->existencia}}</textarea>
+                            <textarea name="content" class="form-control" >{{$miscelaneo->existencia}}</textarea>
                             @error('content')
                                 <small class="text-light">{{ $message }}</small>
                             @enderror
                             <br>
-            
+                            <label for=""class="form-label" >Marca</label>
+                            <input type="text" name="marca" class="form-control"value="{{$miscelaneo->marca}}">
+                            @error('marca')
+                                <small class="text-light">{{ $message }}</small>
+                            @enderror
+                            <br>
                             
                             
                             
                         </section>
                     </form>
-                  <a href="{{route('productos.index')}}" class="btn btn-info">Regresar</a>
+                  <a href="{{route('miscelaneos.index')}}" class="btn btn-info">Regresar</a>
                 </div>
             </div>
         </div>

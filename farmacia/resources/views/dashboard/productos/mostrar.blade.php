@@ -24,7 +24,6 @@
             <div class="card">
                 
                 <div class="card-header">
-                    <a href="{{ route('productos.create') }}" class="btn btn-primary">Crear</a>
                     <table class="table table-striped">
                 <Thead>
                     <body>
@@ -50,16 +49,6 @@
                         
                             <td>
                                 Descripción
-                            </td>
-
-                            <td>
-                                Creado
-                            </td>
-                            <td>
-                                Actualizado
-                            </td>
-                            <td>
-                                Acciones
                             </td>
                         </tr>
                         
@@ -91,28 +80,7 @@
                             <td>
                                 {{$producto->descripcion}}
                             </td>
-                        
-                            <td>
-                                {{$producto->created_at->format('d-m-Y')}}
-                            </td>
-                        
-                            <td>
-                                {{$producto->updated_at-> format('d-m-Y')}}
-                            </td>
 
-                            <td>
-                                <a href="{{route('productos.show',$producto->id)}}" class="btn btn-outline-info">Ver</a>
-                                <a href="{{route('productos.edit',$producto->id)}}" class="btn btn-outline-info">Actualizar</a>
-                                                        
-                                <form method="POST" action="{{route('productos.destroy',$producto->id)}}">
-                                @method('DELETE')
-                                @csrf
-                                <button class="btn btn-outline-danger ms-5" type="submit">Borrar</button>
-                                </form >
-
-
-                                
-                            </td>
                         </tr>
                     @endforeach
                         
