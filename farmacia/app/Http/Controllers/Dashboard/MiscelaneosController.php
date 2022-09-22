@@ -43,7 +43,7 @@ class MiscelaneosController extends Controller
     public function store(StoreMiscelaneosPost $request)
     {
         Miscelaneos::create($request->validated());
-        return redirect('miscelaneos/create')->with('status', 'Muchas gracias, el producto ha sido creado con exito');
+        return redirect('miscelaneos/create')->with('status', 'Muchas gracias, el miscelaneos ha sido creado con exito');
     }
 
     /**

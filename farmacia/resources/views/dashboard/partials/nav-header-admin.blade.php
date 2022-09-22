@@ -16,6 +16,9 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('productos.index')}}">Medicamentos</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('farmacos.index')}}">Farmacos</a>
+                  </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

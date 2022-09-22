@@ -1,12 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreFarmacosPost;
 use App\Models\Farmacos;
 use Illuminate\Http\Request;
 
 class FarmacosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('soloadmin',['only'=>['index']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class FarmacosController extends Controller
      */
     public function index()
     {
-        //
+        $farmaco=Farmacos::orderBy('created_at','desc')->cursorpaginate(5);
+        echo view ('dashboard.farmacos.index',['farmacos'=> $farmaco]);
     }
 
     /**
@@ -24,7 +31,7 @@ class FarmacosController extends Controller
      */
     public function create()
     {
-        //
+        echo view ('dashboard.farmacos.create',["farmaco"=> new Farmacos()]);
     }
 
     /**
@@ -33,9 +40,10 @@ class FarmacosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreFarmacosPost $request)
     {
-        //
+        Farmacos::create($request->validated());
+        return redirect('farmacos/create')->with('status', 'Muchas gracias, el farmaco ha sido creado con exito');
     }
 
     /**
@@ -44,9 +52,9 @@ class FarmacosController extends Controller
      * @param  \App\Models\Farmacos  $farmacos
      * @return \Illuminate\Http\Response
      */
-    public function show(Farmacos $farmacos)
+    public function show(Farmacos $farmaco)
     {
-        //
+        echo view('dashboard.farmacos.show', ["farmaco"=>$farmaco]);
     }
 
     /**
@@ -55,9 +63,9 @@ class FarmacosController extends Controller
      * @param  \App\Models\Farmacos  $farmacos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Farmacos $farmacos)
+    public function edit(Farmacos $farmaco)
     {
-        //
+        echo view ('dashboard.farmacos.edit',['farmaco'=>$farmaco]);
     }
 
     /**
@@ -67,9 +75,10 @@ class FarmacosController extends Controller
      * @param  \App\Models\Farmacos  $farmacos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Farmacos $farmacos)
+    public function update(StoreFarmacosPost $request, Farmacos $farmaco)
     {
-        //
+        $farmaco->update($request->validated());
+        return back()->with('status', 'Fue editado correctamente');
     }
 
     /**
@@ -78,8 +87,9 @@ class FarmacosController extends Controller
      * @param  \App\Models\Farmacos  $farmacos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Farmacos $farmacos)
+    public function destroy(Farmacos $farmaco)
     {
-        //
+        $farmaco->delete();
+        return back()->with('status','borrado exitosamente');
     }
 }
