@@ -12,8 +12,9 @@
    
 
     <header>
-        @include('dashboard.partials.nav-header-admin')
-        <h5>ADMIN</h5>
+        @include('dashboard.partials.nav-header-superadmin')
+        <br>
+        <h5>SUPERADMIN</h5>
         <center><h1 class="mb-5">Ingreso de Farmacos</h1></center>
     </header>
 

@@ -23,6 +23,9 @@ class SoloUser
             case('2'):
                 return $next($request);
             break;
+            case('3'):
+                return redirect('superadmin');
+            break;
         }
     }
 }

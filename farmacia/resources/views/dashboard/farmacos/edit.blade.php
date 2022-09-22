@@ -13,7 +13,7 @@
     <title>ACTUALIZAR FARMACO</title>
 </head>
 <body class="fondo">
-    <header>@include('dashboard.partials.nav-header-admin')</header>
+    <header>@include('dashboard.partials.nav-header-superadmin')</header>
    {{--  @include('dashboard.partials.nav-header-main') --}}
 
    <br>
