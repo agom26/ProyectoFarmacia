@@ -17,7 +17,7 @@ class TodosSeeder extends Seeder
         $useradmin=User::create([
             'name'=>'administrador',
             'email'=>'admin@gmail.com',
-            'password'=>Hash::make('pepian'),
+            'password'=>Hash::make('Pepian'),
             'tipo'=>'1',
         ]);
 
