@@ -70,4 +70,27 @@
         </div>
     </div>
 </div>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mt-5">
+
+                <div class="card-body ">
+
+                   <center>
+                        <p>
+                            antes hacer un php artisan migrate:refresh --seed <br><br>
+                            admin@gmail.com-> Pepian <br>
+                            cliente@gmail.com-> pizza <br>
+                            superadmin@gmail.com->Farmacos
+                        </p>
+                   </center>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
